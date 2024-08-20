@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Meeting Room - Meeting Room Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create Meeting Room</h1>
+    </header>
+
+    <section>
+        <h2>Create New Meeting Room</h2>
+        <form id="createRoomForm">
+            <label for="roomName">Room Name:</label>
+            <input type="text" id="roomName" name="roomName" required>
+
+            <label for="seatingCapacity">Seating Capacity:</label>
+            <input type="number" id="seatingCapacity" name="seatingCapacity" required>
+
+            <label for="amenities">Select Amenities:</label>
+            <div>
+                <input type="checkbox" id="projector" name="amenities" value="Projector">
+                <label for="projector">Projector (5 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wifi" name="amenities" value="WiFi">
+                <label for="wifi">WiFi Connection (10 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="conferenceCall" name="amenities" value="Conference Call">
+                <label for="conferenceCall">Conference Call Facility (15 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="whiteboard" name="amenities" value="Whiteboard">
+                <label for="whiteboard">Whiteboard (5 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="waterDispenser" name="amenities" value="Water Dispenser">
+                <label for="waterDispenser">Water Dispenser (5 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="tv" name="amenities" value="TV">
+                <label for="tv">TV (10 Credits)</label>
+            </div>
+            <div>
+                <input type="checkbox" id="coffeeMachine" name="amenities" value="Coffee Machine">
+                <label for="coffeeMachine">Coffee Machine (10 Credits)</label>
+            </div>
+
+            <button type="submit">Create Room</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meeting Room Booking System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
