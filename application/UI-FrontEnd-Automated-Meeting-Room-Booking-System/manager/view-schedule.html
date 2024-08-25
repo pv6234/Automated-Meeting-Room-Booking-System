@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Schedule</title>
+    <link rel="stylesheet" href="styles_mng.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .schedule-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+        .schedule-card h3 {
+            margin-bottom: 8px;
+        }
+        .schedule-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .schedule-details p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .amenities {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #333;
+        }
+        .schedule-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <nav class="sidebar">
+            <h2>&nbsp Manager Dashboard</h2>
+            <ul>
+                <li><a href="manager-dashboard.html">Dashboard</a></li>
+                <li><a href="book-room.html">Book Room</a></li>
+                <li><a href="view-schedule.html" class="active">View Schedule</a></li>
+                <li><a href="update-credits.html">Update Credits</a></li>
+            </ul>
+        </nav>
+
+       
+        <main>
+            <header class="welcome-banner">
+                <h1>Welcome to Manager Dashboard</h1>
+            </header>
+
+            <section class="manager-schedule">
+                <h2>Your Schedule</h2>
+                
+                
+                <div id="scheduleContainer" class="schedule-container">
+                 
+                </div>
+            </section>
+        </main>
+    </div>
+
+  
+    <script src="manager-dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSchedule();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="styles_mng.css">
+    
+</head>
+<body>
+    <div class="main-content">
+       
+        <nav class="sidebar">
+            <h2>&nbsp Manager Dashboard</h2>
+            <ul>
+                <li><a href="manager-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="book-room.html">Book Room</a></li>
+                <li><a href="view-schedule.html">View Schedule</a></li>
+                <li><a href="update-credits.html">Update Credits</a></li>
+            </ul>
+        </nav>
+    
+        <main>
+            <header class="welcome-banner">
+                <h1>Welcome to Manager Dashboard</h1>
+            </header>
+            
+            <section class="manager-dashboard">
+                <h2>Available Rooms</h2>
+
+
+
+                <div class="mcarousel-container">
+    <button class="mcarousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <div id="mcarousel" class="mcarousel">
+        <!-- Items will be dynamically added here -->
+    </div>
+    <button class="mcarousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+</div>
+
+
+
+                
+
+                <h3>Room Booking</h3>
+                <form id="bookingForm">
+                    <label for="roomSelect">Select Room:</label>
+                    <select id="roomSelect">
+                    </select>
+                    
+                    <label for="bookingDate">Date:</label>
+                    <input type="date" id="bookingDate" required>
+                    
+                    <label for="bookingTime">Time:</label>
+                    <input type="time" id="bookingTime" required>
+                    
+                    <button type="button" onclick="bookRoom()">Book Room</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    
+    <script src="manager-dashboard.js"></script> 
+</body>
+</html>

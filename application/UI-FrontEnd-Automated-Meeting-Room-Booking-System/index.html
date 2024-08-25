@@ -2,32 +2,166 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting Room Booking System</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login - Meeting Room Booking System</title>
+    <style>
+      body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #9FA1A4; /* Background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 350px;
+    padding: 40px;
+    background-color: #FFFFFF; /* Background color of the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #231F20; /* Heading color */
+    font-size: 24px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 30px); /* Adjust width for padding and border */
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #231F20; /* Input text color */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.login-container button {
+    width: calc(100% - 30px); /* Adjust width for padding and border */
+    padding: 15px;
+    background-color: #EE3524; /* Button background color */
+    border: none;
+    color: #FFFFFF; /* Button text color */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.login-container button:hover {
+    background-color: #D2331F; /* Darker shade of button background for hover effect */
+}
+
+.login-container a {
+    display: block;
+    margin-top: 15px;
+    color: #EE3524; /* Link color */
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #EE3524; /* Error message color */
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #231F20; /* Text color for remember me */
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}
+
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Meeting Room Booking System</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="#">Room Details</a></li>
-        </ul>
-    </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
 
-    <section>
-        <h2>Welcome to the Automated Meeting Room Booking System</h2>
-        <p>This system allows employees to book meeting rooms as per their requirements.</p>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Meeting Room Booking System</p>
-    </footer>
+        <div id="errorMessage" class="error-message"></div>
 
-    <script src="script.js"></script>
+        <a href="#">Forgot Password?</a>
+        <a href="#">Sign Up</a>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const users = [
+                { email: 'admin@example.com', password: 'admin123', role: 'admin' },
+                { email: 'manager@example.com', password: 'manager123', role: 'manager' },
+                { email: 'member@example.com', password: 'member123', role: 'member' }
+            ];
+
+        
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+       
+                switch (user.role) {
+                    case 'admin':
+                        window.location.href = 'admin/admin-dashboard.html';
+                        break;
+                    case 'manager':
+                        window.location.href = 'manager/manager-dashboard.html';
+                        break;
+                    case 'member':
+                        window.location.href = 'member/member-dashboard.html';
+                        break;
+                    default:
+                        errorMessage.textContent = "Invalid user role.";
+                }
+            } else {
+                errorMessage.textContent = "Invalid email or password.";
+            }
+        });
+    </script>
 </body>
 </html>

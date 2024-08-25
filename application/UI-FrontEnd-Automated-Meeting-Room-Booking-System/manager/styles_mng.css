@@ -1,0 +1,188 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #9FA1A4; /* Background color for the body */
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #231F20; /* Dark color for the sidebar */
+    color: #FFFFFF; /* Text color in the sidebar */
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+}
+
+.sidebar ul li a {
+    color: #FFFFFF; /* Link color in the sidebar */
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #EE3524; /* Background color for hovered links */
+    border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.welcome-banner {
+    background-image: url('https://coreui.io/images/ogimages/coreui_1200_600.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF; /* Text color in the banner */
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.welcome-banner h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #EE3524; /* Heading color in the welcome banner */
+}
+
+.manager-dashboard {
+    margin: 20px;
+}
+
+#bookingForm {
+    margin-top: 20px;
+}
+
+#bookingForm label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #231F20; /* Label color */
+}
+
+#bookingForm input, #bookingForm select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.mcarousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.mcarousel {
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+    gap: 10px; /* Gap between items */
+}
+
+.mcarousel-item {
+    min-width: 200px;
+    margin-right: 10px;
+    background-color: #FFFFFF; /* Background color for carousel items */
+    border: 1px solid #EE3524; /* Border color for carousel items */
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.mcarousel-item img {
+    width: 100%;
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the container without distortion */
+    border-bottom: 1px solid #EE3524; /* Border color below images */
+}
+
+.mcarousel-item p {
+    margin: 10px 0;
+    color: #231F20; /* Text color in carousel items */
+}
+
+.mcarousel-button {
+    background-color: #EE3524; /* Button color */
+    color: #FFFFFF; /* Button text color */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.mcarousel-button.prev {
+    left: 0;
+}
+
+.mcarousel-button.next {
+    right: 0;
+}
+
+.mcarousel-button:hover {
+    background-color: #231F20; /* Darker button color on hover */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #FFFFFF; /* Card background color */
+    width: 30%;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #231F20; /* Heading color in cards */
+}
+
+.card p {
+    color: #666; /* Text color in cards */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

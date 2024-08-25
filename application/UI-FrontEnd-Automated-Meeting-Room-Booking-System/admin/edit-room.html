@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Room - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <div class="sidebar">
+        <h2>&nbsp Admin Dashboard</h2>
+        <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="create-room.html">Create Room</a></li>
+            <li><a href="edit-room.html">Edit Room</a></li>
+            <li><a href="view-rooms.html">View All Rooms</a></li>
+            <li><a href="manage-users.html">Manage Users</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+       
+        <div class="welcome-banner">
+            <h1>Welcome to the Admin Dashboard</h1>
+        </div>
+
+    
+         <div class="room-carousel-container">
+            <h2>Available Rooms</h2>
+            <div class="carousel">
+                <!-- Left navigation arrow -->
+                <button class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</button>
+                
+                <!-- Carousel items -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Dynamic room cards will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right navigation arrow -->
+                <button class="carousel-control right" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </div>
+
+
+       
+        <div class="modify-room-form">
+            <h2>Modify Existing Room</h2>
+            <form id="modifyRoomForm">
+                <label for="searchRoomName">Search Room by Name:</label>
+                <input type="text" id="searchRoomName" name="searchRoomName" required>
+                <button type="button" onclick="searchRoom()">Search</button>
+
+                <div id="roomDetails" style="display: none;">
+                    <h3>Room Details</h3>
+                    <label for="newRoomName">Room Name:</label>
+                    <input type="text" id="newRoomName" name="newRoomName">
+
+                    <label for="newSeatingCapacity">Seating Capacity:</label>
+                    <input type="number" id="newSeatingCapacity" name="newSeatingCapacity">
+
+                    <label for="newAmenities">Amenities:</label>
+                    <div class="amenities-checkboxes">
+                        <label><input type="checkbox" value="Projector" class="new-amenity-checkbox"> Projector</label>
+                        <label><input type="checkbox" value="WiFi" class="new-amenity-checkbox"> WiFi</label>
+                        <label><input type="checkbox" value="Conference Call" class="new-amenity-checkbox"> Conference Call</label>
+                        <label><input type="checkbox" value="Whiteboard" class="new-amenity-checkbox"> Whiteboard</label>
+                        <label><input type="checkbox" value="Water Dispenser" class="new-amenity-checkbox"> Water Dispenser</label>
+                        <label><input type="checkbox" value="TV" class="new-amenity-checkbox"> TV</label>
+                        <label><input type="checkbox" value="Coffee Machine" class="new-amenity-checkbox"> Coffee Machine</label>
+                    </div>
+
+                    <label for="newRoomImage">Upload New Room Image:</label>
+                    <input type="file" id="newRoomImage" name="newRoomImage" accept="image/*">
+
+                    <button type="button" onclick="updateRoom()">Update Room</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="rooms.js"></script> 
+</body>
+</html>

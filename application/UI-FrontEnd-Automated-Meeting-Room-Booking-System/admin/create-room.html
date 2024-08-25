@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <div class="sidebar">
+        <h2>&nbsp Admin Dashboard</h2>
+        <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="create-room.html">Create Room</a></li>
+            <li><a href="edit-room.html">Edit Room</a></li>
+            <li><a href="view-rooms.html">View All Rooms</a></li>
+            <li><a href="manage-users.html">Manage Users</a></li>
+        </ul>
+    </div>
+
+  
+    <div class="main-content">
+       
+        <div class="welcome-banner">
+            <h1>Welcome to the Admin Dashboard</h1>
+        </div>
+
+        <div class="room-carousel-container">
+            <h2>Available Rooms</h2>
+            <div class="carousel">
+                <!-- Left navigation arrow -->
+                <button class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</button>
+                
+                <!-- Carousel items -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Dynamic room cards will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right navigation arrow -->
+                <button class="carousel-control right" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="create-room-form">
+            <h2>Create New Room</h2>
+            <form id="createRoomForm">
+                <label for="roomName">Room Name:</label>
+                <input type="text" id="roomName" name="roomName" required>
+
+                <label for="seatingCapacity">Seating Capacity:</label>
+                <input type="number" id="seatingCapacity" name="seatingCapacity" required>
+
+                <label for="amenities">Amenities:</label>
+                <div class="amenities-checkboxes">
+                    <label><input type="checkbox" value="Projector" class="amenity-checkbox"> Projector</label>
+                    <label><input type="checkbox" value="WiFi" class="amenity-checkbox"> WiFi</label>
+                    <label><input type="checkbox" value="Conference Call" class="amenity-checkbox"> Conference Call</label>
+                    <label><input type="checkbox" value="Whiteboard" class="amenity-checkbox"> Whiteboard</label>
+                    <label><input type="checkbox" value="Water Dispenser" class="amenity-checkbox"> Water Dispenser</label>
+                    <label><input type="checkbox" value="TV" class="amenity-checkbox"> TV</label>
+                    <label><input type="checkbox" value="Coffee Machine" class="amenity-checkbox"> Coffee Machine</label>
+                </div>
+
+              
+                <label for="roomImage">Upload Room Image:</label>
+                <input type="file" id="roomImage" name="roomImage" accept="image/*">
+
+                <button type="button" onclick="createRoom()">Create Room</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="rooms.js"></script> 
+</body>
+</html>

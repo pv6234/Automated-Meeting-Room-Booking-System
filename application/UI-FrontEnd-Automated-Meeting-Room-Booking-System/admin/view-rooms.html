@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="rooms.js"></script> 
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>&nbsp Admin Dashboard</h2>
+        <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="create-room.html">Create Room</a></li>
+            <li><a href="edit-room.html">Edit Room</a></li>
+            <li><a href="view-rooms.html">View All Rooms</a></li>
+            <li><a href="manage-users.html">Manage Users</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Welcome to the Admin Dashboard</h1>
+        </div>
+
+        <!-- Room Carousel Section -->
+        <div class="room-carousel-container">
+            <h2>Available Rooms</h2>
+            <div class="carousel">
+                <!-- Left navigation arrow -->
+                <button class="carousel-control left" onclick="moveCarousel(-1)">&#10094;</button>
+                
+                <!-- Carousel items -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Dynamic room cards will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right navigation arrow -->
+                <button class="carousel-control right" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <!-- External JS for room management -->
+</body>
+</html>

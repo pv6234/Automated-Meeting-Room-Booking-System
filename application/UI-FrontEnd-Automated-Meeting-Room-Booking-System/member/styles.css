@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #9FA1A4; /* Background color for the body */
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #231F20; /* Dark color for the sidebar */
+    color: #FFFFFF; /* Text color in the sidebar */
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+}
+
+.sidebar ul li a {
+    color: #FFFFFF; /* Link color in the sidebar */
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #EE3524; /* Background color for hovered links */
+    border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.welcome-banner {
+    background-image: url('https://coreui.io/images/ogimages/coreui_1200_600.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF; /* Text color in the banner */
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.welcome-banner h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #EE3524; /* Heading color in the welcome banner */
+}
+
+.member-dashboard {
+    margin-top: 20px;
+}
+
+#scheduleList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.schedule-item {
+    background-color: #FFFFFF; /* Background color for schedule items */
+    border: 1px solid #EE3524; /* Border color for schedule items */
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: #231F20; /* Text color for schedule items */
+}

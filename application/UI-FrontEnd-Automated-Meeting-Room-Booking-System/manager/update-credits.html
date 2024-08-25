@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Credits</title>
+    <link rel="stylesheet" href="styles_mng.css">
+    <style>
+        .credits-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .credits-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .btn-reset {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn-reset:hover {
+            background-color: #0056b3;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+       
+        <nav class="sidebar">
+            <h2>&nbsp Manager Dashboard</h2>
+            <ul>
+                <li><a href="manager-dashboard.html">Dashboard</a></li>
+                <li><a href="book-room.html">Book Room</a></li>
+                <li><a href="view-schedule.html">View Schedule</a></li>
+                <li><a href="update-credits.html" class="active">Update Credits</a></li>
+            </ul>
+        </nav>
+
+        
+        <main>
+            <header class="welcome-banner">
+                <h1>Welcome to Manager Dashboard</h1>
+            </header>
+
+            <section class="credits-section">
+                <div class="credits-container">
+                    <div class="credits-display">
+                        Current Credits: <span id="currentCredits">2000</span>
+                    </div>
+                    <button class="btn-reset" onclick="resetCredits()">Reset Credits</button>
+                    <div class="success-message" id="successMessage">Credits have been successfully reset to 2000!</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="manager-dashboard.js"></script> 
+</body>
+</html>
