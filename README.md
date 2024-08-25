@@ -1,5 +1,4 @@
 # Automated-Meeting-Room-Booking-System
-## **Automated Meeting Room Booking System**
 
 ### **Description**
 
